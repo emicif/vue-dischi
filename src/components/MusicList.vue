@@ -1,6 +1,8 @@
 <template>
-  <div class="container">
-    <div v-if="cards.length > 0" class="col-12 col-md-6 col-xl-3">
+  <div class="ec-container">
+    <div 
+    v-if="cards.length > 0" 
+    class="col-12 col-md-6 col-xl-3 d-flex">
         <CardItem v-for="item in cards" :key="item.id" :card="item"/>
     </div>
     <div v-else>
@@ -50,5 +52,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.ec-container {
+  max-width: 100%;
+  height: 100vh;
+  background-color: #1e2d3b;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
 
 </style>

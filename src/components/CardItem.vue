@@ -1,11 +1,10 @@
 <template>
-  <div>
+  <div class="container-fluid">
     <div class="ec-card">
         <img :src="card.poster" :alt="card.title" />
         <h3>{{card.title}}</h3>
         <p> {{card.author}} </p>
         <p> {{card.year}} </p>
-
     </div>
   </div>
   
@@ -36,13 +35,13 @@ export default {
 
 
 
-
 .ec-card {
   margin-top: 10px;
   border: 1px solid black;
   background-color: #2e3a46;
   height: 400px;
   width: 200px;
+ 
   img {
   height: 200px;
   padding: 20px;
