@@ -1,7 +1,10 @@
 <template>
   <div class="container">
-    <div class="col-12 col-md-6 col-xl-3">
+    <div v-if="cards.length > 0" class="col-12 col-md-6 col-xl-3">
         <CardItem v-for="item in cards" :key="item.id" :card="item"/>
+    </div>
+    <div v-else>
+        <LoadingComponent />
     </div>
   </div>
 </template>
@@ -9,6 +12,7 @@
 <script>
 import axios from 'axios';
 import CardItem from '@/components/CardItem.vue'
+import LoadingComponent from '@/components/LoadingComponent.vue'
 
 export default {
     name: 'MusicList',
@@ -21,7 +25,8 @@ export default {
         url: String
     },
     components: {
-        CardItem
+        CardItem,
+        LoadingComponent
     },
     mounted(){
         this.loadData();
