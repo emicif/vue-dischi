@@ -1,0 +1,45 @@
+<template>
+  <div id="app">
+    <HeaderLayout :message="'Spotify'"/>
+    <MusicList :url="apiUrl"/>
+    <MainLayout :apiUrl="card"/>
+    <CardItem/>
+  </div>
+</template>
+
+<script>
+import HeaderLayout from '@/components/HeaderLayout.vue'
+import MusicList from '@/components/MusicList.vue'
+import MainLayout from '@/components/MainLayout.vue'
+import CardItem from '@/components/CardItem.vue'
+//import general from '@/style/general'
+
+export default {
+  name: 'App',
+  components: {
+    HeaderLayout,
+    MusicList,
+    MainLayout,
+    CardItem
+  },
+  data () {
+    return {
+      apiUrl: 'https://flynn.boolean.careers/exercises/api/array/music'
+    }
+  }
+}
+</script>
+
+<style lang="scss">
+
+@import '@/style/general';
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
