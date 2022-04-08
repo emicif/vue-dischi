@@ -8,11 +8,12 @@
 </template>
 
 <script>
+ 
 import HeaderLayout from '@/components/HeaderLayout.vue'
 import MusicList from '@/components/MusicList.vue'
 import MainLayout from '@/components/MainLayout.vue'
 import CardItem from '@/components/CardItem.vue'
-//import general from '@/style/general'
+
 
 export default {
   name: 'App',
