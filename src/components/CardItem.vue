@@ -1,12 +1,14 @@
 <template>
   <div>
-    <h2>
-      <img :src="card.poster" :alt="card.title" />
-      <p> {{card.author}} </p>
-      <p> {{card.year}} </p>
+    <div class="ec-card">
+        <img :src="card.poster" :alt="card.title" />
+        <h3>{{card.title}}</h3>
+        <p> {{card.author}} </p>
+        <p> {{card.year}} </p>
 
-    </h2>
+    </div>
   </div>
+  
 </template>
 
 <script>
@@ -31,5 +33,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+
+
+
+.ec-card {
+  margin-top: 10px;
+  border: 1px solid black;
+  background-color: #2e3a46;
+  height: 400px;
+  width: 200px;
+  img {
+  height: 200px;
+  padding: 20px;
+  }
+  h3 {
+    color: white;
+    text-transform: uppercase;
+  }
+  p {
+    color: grey;
+  }
+}
+
+
+
 
 </style>

@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="container">
     <div class="col-12 col-md-6 col-xl-3">
-        <CardItem :card="cards[0]"/>
+        <CardItem v-for="item in cards" :key="item.id" :card="item"/>
     </div>
   </div>
 </template>
@@ -44,6 +44,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="container">
+    <div class="ec-container">
       <img alt="Spotify Logo" src="@/assets/spotify-logo.png">
       {{message}}
     </div>
@@ -17,9 +17,10 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
-.container {
+.ec-container {
+  width: 100%;
   height: 100px;
   background-color: #2e3a46;
   img {
