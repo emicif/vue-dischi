@@ -53,13 +53,12 @@ export default {
 
 <style lang="scss" scoped>
 
+  
+
 .ec-container {
-  max-width: 100%;
   height: 100vh;
   background-color: #1e2d3b;
   display: flex;
-  flex-wrap: wrap;
-
 }
 
 
