@@ -2,6 +2,7 @@
   <div class="ec-container ">
      <div class="container-card">
         <SearchComponent @search="filterGenere"/>
+        <SearchAuthor @search="filterAuthor"/>
         <div class="cardMusic"
                 v-if="cards.length > 0">
                     <CardItem 
@@ -23,6 +24,7 @@ import axios from 'axios';
 import CardItem from '@/components/CardItem.vue'
 import LoadingComponent from '@/components/LoadingComponent.vue'
 import SearchComponent from '@/components/SearchComponent.vue'
+import SearchAuthor from '@/components/SearchAuthor.vue'
 
 export default {
     name: 'MusicList',
@@ -30,6 +32,7 @@ export default {
         return {
             cards: [],
             searchGenere: '',
+            searchAuthor: '',
         }
        
     },
@@ -39,8 +42,9 @@ export default {
     components: {
         CardItem,
         LoadingComponent,
-        SearchComponent
-    },
+        SearchComponent,
+        SearchAuthor
+      },
     mounted(){
         this.loadData();
     },
@@ -60,12 +64,21 @@ export default {
         },
         filterGenere(searchGenere){
             this.searchGenere = searchGenere;
-        }
+            console.log('searchGenere', searchGenere)
+           
+        },
+        filterAuthor(searchAuthor){
+            this.searchAuthor = searchAuthor;
+            console.log('searchAuthor', searchAuthor)
+        },
     },
     computed: {
         filterList(){
-            return this.cards.filter((item)=>item.genre.includes(this.searchGenere))
-        }
+            return this.cards.filter((item)=>item.genre.includes(this.searchGenere)
+            &&
+            item.author.includes(this.searchAuthor))
+            
+        },
     }
   
 }

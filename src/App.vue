@@ -2,7 +2,6 @@
   <div id="app">
     <HeaderLayout :message="'Spotify'"/>
     <MusicList :url="apiUrl"/>
-    
   </div>
 </template>
 

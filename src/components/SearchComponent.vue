@@ -1,13 +1,18 @@
 <template>
-  <div class="selettore">
-      <select @change = "showGenere($event)">
-        <option value="">Seleziona un genere musicale</option>  
-        <option value="Rock">Rock</option>
-        <option value="Pop">Pop</option>
-        <option value="Jazz">Jazz</option>
-        <option value="Metal">Metal</option>
-      </select>
-  </div>
+<div>
+    <div class="selettore">
+        <select @change = "showGenere($event)">
+            <option value="">Seleziona un genere musicale</option>  
+            <option value="Rock">Rock</option>
+            <option value="Pop">Pop</option>
+            <option value="Jazz">Jazz</option>
+            <option value="Metal">Metal</option>
+        </select>
+        
+    </div>
+  
+</div>
+   
 </template>
 
 
@@ -18,6 +23,7 @@ export default {
     data () {
         return {
            selectedGenere: '', 
+           selectedAuthor: '',
         }
     },
     methods: {
@@ -25,8 +31,9 @@ export default {
             console.log('ciao', event.target.value);
             this.selectedGenere = event.target.value;
             this.$emit('search', this.selectedGenere)
-        }
+        },
     }
+
 }
 </script>
 
