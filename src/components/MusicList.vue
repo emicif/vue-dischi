@@ -1,11 +1,11 @@
 <template>
   <div class="ec-container ">
      <div class="container-card">
-         <SearchComponent />
+        <SearchComponent @search="filterGenere"/>
         <div class="cardMusic"
                 v-if="cards.length > 0">
                     <CardItem 
-                    v-for="item in cards" 
+                    v-for="item in filterList" 
                     :key="item.id" 
                     :card="item"/>
         </div>
@@ -28,8 +28,10 @@ export default {
     name: 'MusicList',
     data(){
         return {
-            cards: []
+            cards: [],
+            searchGenere: '',
         }
+       
     },
     props: {
         url: String
@@ -46,7 +48,7 @@ export default {
         loadData(){
             axios.get(this.url).then(
                 (response)=>{
-                  //console.log(response)
+                  console.log(response)
                    if (response.status === 200){
                     this.cards = response.data.response;
                     console.log(this.cards[0]);
@@ -55,8 +57,17 @@ export default {
             ).catch((error)=>{
                 console.log(error);
             })
+        },
+        filterGenere(searchGenere){
+            this.searchGenere = searchGenere;
+        }
+    },
+    computed: {
+        filterList(){
+            return this.cards.filter((item)=>item.genre.includes(this.searchGenere))
         }
     }
+  
 }
 </script>
 
