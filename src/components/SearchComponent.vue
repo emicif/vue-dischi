@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="selettore">
       <select @change = "showGenere($event)">
-        <option value="">All</option>  
+        <option value="">Seleziona un genere musicale</option>  
         <option value="Rock">Rock</option>
         <option value="Pop">Pop</option>
         <option value="Jazz">Jazz</option>
@@ -31,5 +31,18 @@ export default {
 </script>
 
 <style scoped>
-
+    .selettore {
+        display: flex;
+        justify-content: center;
+        padding: 30px;
+    }
+    select {
+        background-color: #2e3a46;
+        color: white;
+        padding: 15px 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 20px;
+    }
+    
 </style>

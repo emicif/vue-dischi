@@ -22,6 +22,8 @@ export default {
 .ec-container {
   width: 100%;
   height: 100px;
+  line-height: 100px;
+  vertical-align: middle;
   background-color: #2e3a46;
   img {
     height: 50px;
