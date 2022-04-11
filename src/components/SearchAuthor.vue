@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div class="">
+    <div class="selettore">
         <select @change = "showAuthor($event)">
             <option value="">Seleziona un autore</option>  
             <option value="Bon Jovi">Bon Jovi</option>

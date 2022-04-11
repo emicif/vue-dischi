@@ -86,7 +86,7 @@ export default {
 
 <style lang="scss" scoped>
 .ec-container {
-  height: 100vh;
+  height: 150vh;
   background-color: #1e2d3b;
 }
 
