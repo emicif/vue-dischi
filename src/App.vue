@@ -2,7 +2,7 @@
   <div id="app">
     <HeaderLayout :message="'Spotify'"/>
     <MusicList :url="apiUrl"/>
-    <CardItem/>
+    
   </div>
 </template>
 
@@ -10,7 +10,7 @@
  
 import HeaderLayout from '@/components/HeaderLayout.vue'
 import MusicList from '@/components/MusicList.vue'
-import CardItem from '@/components/CardItem.vue'
+
 
 
 export default {
@@ -18,7 +18,6 @@ export default {
   components: {
     HeaderLayout,
     MusicList,
-    CardItem
   },
   data () {
     return {
