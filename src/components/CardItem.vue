@@ -1,17 +1,13 @@
 <template>
- 
     <div class="ec-card">
-        <img :src="card.poster" :alt="card.title" />
-        <h3>{{card.title}}</h3>
-        <p> {{card.author}} </p>
-        <p> {{card.year}} </p>
+        <div><img :src="card.poster" :alt="card.title" /></div>
+        <h3><strong>{{card.title}}</strong></h3>
+        <p>{{card.author}}</p>
+        <p>{{card.year}}</p>
     </div>
-
-  
 </template>
 
 <script>
-
 /*
     data:
         response: Array(10)
@@ -21,7 +17,7 @@
         poster: "https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg"
         title: "New Jersey"
         year: "1988"
-    */
+*/
 
 export default {
     name: 'CardItem',
@@ -34,11 +30,11 @@ export default {
 <style lang="scss" scoped>
 
 .ec-card {
-  //width: calc(100% / 4);
   margin: 30px auto;
   border: 1px solid black;
   background-color: #2e3a46;
   height: 400px;
+  text-align: center;
    
   img {
   height: 200px;
@@ -48,13 +44,10 @@ export default {
   h3 {
     color: white;
     text-transform: uppercase;
+   font-size: 20px;
   }
   p {
     color: grey;
   }
 }
-
-
-
-
 </style>
