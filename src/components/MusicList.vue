@@ -1,18 +1,19 @@
 <template>
   <div class="ec-container ">
      <div class="container-card">
- <div class="cardMusic"
-        v-if="cards.length > 0">
-            <CardItem v-for="item in cards" :key="item.id" :card="item"/>
+         <SearchComponent />
+        <div class="cardMusic"
+                v-if="cards.length > 0">
+                    <CardItem 
+                    v-for="item in cards" 
+                    :key="item.id" 
+                    :card="item"/>
         </div>
 
         <div v-else>
             <LoadingComponent />
         </div>
      </div>
-       
-     
-        
   </div>
 </template>
 
@@ -21,6 +22,7 @@
 import axios from 'axios';
 import CardItem from '@/components/CardItem.vue'
 import LoadingComponent from '@/components/LoadingComponent.vue'
+import SearchComponent from '@/components/SearchComponent.vue'
 
 export default {
     name: 'MusicList',
@@ -34,7 +36,8 @@ export default {
     },
     components: {
         CardItem,
-        LoadingComponent
+        LoadingComponent,
+        SearchComponent
     },
     mounted(){
         this.loadData();
