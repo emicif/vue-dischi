@@ -1,8 +1,11 @@
 <template>
   <div class="ec-container ">
      <div class="container-card">
-        <SearchComponent @search="filterGenere"/>
-        <SearchAuthor @search="filterAuthor"/>
+         <div class="select">
+            <div class="gener"> <SearchComponent @search="filterGenere"/> </div>
+            <div class="author"><SearchAuthor @search="filterAuthor"/> </div>
+         </div>
+     
         <div class="cardMusic"
                 v-if="cards.length > 0">
                     <CardItem 
@@ -104,6 +107,10 @@ export default {
 .ec-card {
     width: calc(100% / 5);
     padding: 10px;
+}
+
+.select {
+    display: flex;
 }
 
 

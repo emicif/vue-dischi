@@ -8,6 +8,11 @@
             <option value="Sting">Sting</option>
             <option value="Steve Gadd Band">Steve Gadd Band</option>
             <option value="Iron Maiden">Iron Maiden</option>
+            <option value="Eric Clapton">Eric Clapton</option>
+            <option value="Deep Purple">Deep Purple</option>
+            <option value="Metallica">Metallica</option>
+            <option value="Dave Weckl">Dave Weckl</option>
+            <option value="Michael Jacjson">Michael Jacjson</option>
         </select>
     </div>
   
