@@ -1,18 +1,15 @@
 <template>
-<div>
-    <div class="selettore">
-        <select @change = "showGenere($event)">
-            <option value="">Seleziona un genere musicale</option>  
-            <option value="Rock">Rock</option>
-            <option value="Pop">Pop</option>
-            <option value="Jazz">Jazz</option>
-            <option value="Metal">Metal</option>
-        </select>
-        
+    <div>
+        <div class="selettore">
+            <select @change = "showGenere($event)">
+                <option value="">Seleziona un genere musicale</option>  
+                <option value="Rock">Rock</option>
+                <option value="Pop">Pop</option>
+                <option value="Jazz">Jazz</option>
+                <option value="Metal">Metal</option>
+            </select>
+        </div>
     </div>
-  
-</div>
-   
 </template>
 
 
@@ -28,14 +25,14 @@ export default {
     },
     methods: {
         showGenere(event){
-            console.log('ciao', event.target.value);
+            //console.log('ciao', event.target.value);
             this.selectedGenere = event.target.value;
             this.$emit('search', this.selectedGenere)
         },
     }
-
 }
 </script>
+
 
 <style scoped>
     .selettore {
@@ -51,5 +48,4 @@ export default {
         cursor: pointer;
         font-size: 20px;
     }
-    
 </style>

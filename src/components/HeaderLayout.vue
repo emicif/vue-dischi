@@ -2,18 +2,14 @@
   <div id="app">
     <div class="ec-container">
       <img alt="Spotify Logo" src="@/assets/spotify-logo.png">
-      {{message}}
     </div>
-
   </div>
 </template>
+
 
 <script>
 export default {
   name: 'HeaderLayout',
-  props: {
-    message: String
-  } //input che riceve dall'esterno
 }
 </script>
 
@@ -29,6 +25,4 @@ export default {
     height: 50px;
   }
 }
-
-
 </style>

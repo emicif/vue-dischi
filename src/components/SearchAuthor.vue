@@ -32,7 +32,7 @@ export default {
     },
     methods: {
         showAuthor(event){
-            console.log('ciao autore', event.target.value);
+            //console.log('ciao autore', event.target.value);
             this.selectedAuthor = event.target.value;
             this.$emit('search', this.selectedAuthor)
         }

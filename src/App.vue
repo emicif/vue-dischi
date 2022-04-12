@@ -11,7 +11,6 @@ import HeaderLayout from '@/components/HeaderLayout.vue'
 import MusicList from '@/components/MusicList.vue'
 
 
-
 export default {
   name: 'App',
   components: {

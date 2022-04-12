@@ -1,5 +1,5 @@
 <template>
-  <div class="ec-container ">
+  <div class="ec-container">
      <div class="container-card">
          <div class="select">
             <div class="gener"> <SearchComponent @search="filterGenere"/> </div>
@@ -7,11 +7,11 @@
          </div>
      
         <div class="cardMusic"
-                v-if="cards.length > 0">
-                    <CardItem 
-                    v-for="item in filterList" 
-                    :key="item.id" 
-                    :card="item"/>
+            v-if="cards.length > 0">
+                <CardItem 
+                v-for="item in filterList" 
+                :key="item.id" 
+                :card="item"/>
         </div>
 
         <div v-else>
@@ -37,7 +37,6 @@ export default {
             searchGenere: '',
             searchAuthor: '',
         }
-       
     },
     props: {
         url: String
@@ -47,7 +46,7 @@ export default {
         LoadingComponent,
         SearchComponent,
         SearchAuthor
-      },
+    },
     mounted(){
         this.loadData();
     },
@@ -55,10 +54,10 @@ export default {
         loadData(){
             axios.get(this.url).then(
                 (response)=>{
-                  console.log(response)
+                 // console.log(response)
                    if (response.status === 200){
                     this.cards = response.data.response;
-                    console.log(this.cards[0]);
+                   // console.log(this.cards[0]);
                    }
                 }   
             ).catch((error)=>{
@@ -67,12 +66,11 @@ export default {
         },
         filterGenere(searchGenere){
             this.searchGenere = searchGenere;
-            console.log('searchGenere', searchGenere)
-           
+            //console.log('searchGenere', searchGenere)
         },
         filterAuthor(searchAuthor){
             this.searchAuthor = searchAuthor;
-            console.log('searchAuthor', searchAuthor)
+            //console.log('searchAuthor', searchAuthor)
         },
     },
     computed: {
@@ -80,39 +78,36 @@ export default {
             return this.cards.filter((item)=>item.genre.includes(this.searchGenere)
             &&
             item.author.includes(this.searchAuthor))
-            
         },
     }
-  
 }
 </script>
 
 <style lang="scss" scoped>
-.ec-container {
-  height: 150vh;
-  background-color: #1e2d3b;
-}
+    .ec-container {
+    height: 150vh;
+    background-color: #1e2d3b;
+    }
 
-.cardMusic {
-    display: flex;
-    flex-wrap: wrap; 
-}
+    .cardMusic {
+        display: flex;
+        flex-wrap: wrap; 
+    }
 
-.container-card {
-    width: 60%;
-    margin: 0px auto;
+    .container-card {
+        width: 60%;
+        margin: 0px auto;
+    }
 
-}
+    .ec-card {
+        width: calc(100% / 5);
+        padding: 10px;
+    }
 
-.ec-card {
-    width: calc(100% / 5);
-    padding: 10px;
-}
-
-.select {
-    display: flex;
-    justify-content: center;
-}
+    .select {
+        display: flex;
+        justify-content: center;
+    }
 
 
 </style>

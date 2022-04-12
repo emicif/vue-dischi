@@ -30,7 +30,6 @@ export default {
 <style lang="scss" scoped>
 
 .ec-card {
-  //margin: 30px auto;
   border: 1px solid black;
   background-color: #2e3a46;
   height: 400px;
@@ -39,13 +38,14 @@ export default {
   img {
   height: 200px;
   padding: 20px;
-
   }
+
   h3 {
     color: white;
     text-transform: uppercase;
    font-size: 20px;
   }
+  
   p {
     color: grey;
   }
