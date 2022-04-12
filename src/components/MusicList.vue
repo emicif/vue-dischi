@@ -111,6 +111,7 @@ export default {
 
 .select {
     display: flex;
+    justify-content: center;
 }
 
 
